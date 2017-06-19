@@ -1,0 +1,7 @@
+digraph LTSP {
+    p_0 -> p_1 [label=a];
+    p_0 -> p_2 [label=a];
+    p_0 -> p_3 [label=b];
+    p_3 -> p_0 [label=a];
+    {rank = same; p_1; p_2; p_3}
+}

@@ -1,0 +1,8 @@
+digraph LTSPQ {
+    p_0 -> p_F1 [style=dotted];
+    p_0 -> p_Fn [style=dotted];
+    p_F1 -> q_1;
+    p_F1 -> q_n;
+    p_Fn -> q_1;
+    p_Fn -> q_n;
+}

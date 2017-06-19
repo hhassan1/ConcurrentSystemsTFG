@@ -1,0 +1,76 @@
+
+\begin{tikzpicture}[>=latex,line join=bevel,]
+%%
+\begin{scope}
+  \pgfsetstrokecolor{black}
+  \definecolor{strokecol}{rgb}{1.0,1.0,1.0};
+  \pgfsetstrokecolor{strokecol}
+  \definecolor{fillcol}{rgb}{1.0,1.0,1.0};
+  \pgfsetfillcolor{fillcol}
+\end{scope}
+\begin{scope}
+  \pgfsetstrokecolor{black}
+  \definecolor{strokecol}{rgb}{1.0,1.0,1.0};
+  \pgfsetstrokecolor{strokecol}
+  \definecolor{fillcol}{rgb}{1.0,1.0,1.0};
+  \pgfsetfillcolor{fillcol}
+\end{scope}
+\begin{scope}
+  \pgfsetstrokecolor{black}
+  \definecolor{strokecol}{rgb}{1.0,1.0,1.0};
+  \pgfsetstrokecolor{strokecol}
+  \definecolor{fillcol}{rgb}{1.0,1.0,1.0};
+  \pgfsetfillcolor{fillcol}
+\end{scope}
+\begin{scope}
+  \pgfsetstrokecolor{black}
+  \definecolor{strokecol}{rgb}{1.0,1.0,1.0};
+  \pgfsetstrokecolor{strokecol}
+  \definecolor{fillcol}{rgb}{1.0,1.0,1.0};
+  \pgfsetfillcolor{fillcol}
+\end{scope}
+  \node (p_1q_2) at (382.0bp,105.0bp) [draw,ellipse] {$p_1q_2$};
+  \node (p_2q_1) at (126.0bp,105.0bp) [draw,ellipse] {$p_2q_1$};
+  \node (p_1q_0) at (120.0bp,279.0bp) [draw,ellipse] {$p_1q_0$};
+  \node (p_2q_0) at (38.997bp,192.0bp) [draw,ellipse] {$p_2q_0$};
+  \node (p_1q_1) at (281.0bp,192.0bp) [draw,ellipse] {$p_1q_1$};
+  \node (p_0q_1) at (402.0bp,279.0bp) [draw,ellipse] {$p_0q_1$};
+  \node (p_0q_0) at (220.0bp,366.0bp) [draw,ellipse] {$p_0q_0$};
+  \node (p_0q_2) at (561.0bp,192.0bp) [draw,ellipse] {$p_0q_2$};
+  \node (p_2q_2) at (213.0bp,18.0bp) [draw,ellipse] {$p_2q_2$};
+  \draw [->] (p_2q_1) ..controls (128.86bp,76.122bp) and (132.35bp,63.113bp)  .. (140.0bp,54.0bp) .. controls (148.12bp,44.329bp) and (159.53bp,37.135bp)  .. (p_2q_2);
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (169.5bp,61.5bp) node {$ack_{out}$};
+  \draw [->] (p_1q_0) ..controls (129.71bp,250.1bp) and (136.99bp,236.21bp)  .. (148.0bp,228.0bp) .. controls (177.21bp,206.21bp) and (192.83bp,219.58bp)  .. (228.0bp,210.0bp) .. controls (232.09bp,208.89bp) and (236.33bp,207.65bp)  .. (p_1q_1);
+  \draw (177.0bp,235.5bp) node {$hello_{in}$};
+  \draw [->] (p_1q_0) ..controls (120.93bp,240.06bp) and (121.88bp,204.51bp)  .. (123.0bp,174.0bp) .. controls (123.49bp,160.57bp) and (124.13bp,145.66bp)  .. (p_2q_1);
+  \draw (178.0bp,192.0bp) node {$ack_{in}|hello_{in}$};
+  \draw [->] (p_1q_2) ..controls (327.7bp,76.69bp) and (280.01bp,52.704bp)  .. (p_2q_2);
+  \draw (333.5bp,61.5bp) node {$ack_{in}$};
+  \draw [->] (p_1q_1) ..controls (243.03bp,178.33bp) and (235.27bp,175.98bp)  .. (228.0bp,174.0bp) .. controls (192.83bp,164.42bp) and (176.13bp,179.16bp)  .. (148.0bp,156.0bp) .. controls (140.84bp,150.11bp) and (135.94bp,141.43bp)  .. (p_2q_1);
+  \draw (173.5bp,148.5bp) node {$ack_{in}$};
+  \draw [->] (p_0q_0) ..controls (217.55bp,326.59bp) and (217.8bp,289.9bp)  .. (229.0bp,261.0bp) .. controls (235.43bp,244.4bp) and (247.22bp,228.45bp)  .. (p_1q_1);
+  \draw (291.5bp,279.0bp) node {$hello_{out}|hello_{in}$};
+  \draw [->] (p_0q_2) ..controls (503.56bp,163.73bp) and (451.96bp,139.22bp)  .. (p_1q_2);
+  \draw (515.0bp,148.5bp) node {$hello_{out}$};
+  \draw [->] (p_1q_1) ..controls (289.03bp,163.29bp) and (294.9bp,150.01bp)  .. (304.0bp,141.0bp) .. controls (313.91bp,131.18bp) and (327.07bp,123.85bp)  .. (p_1q_2);
+  \draw (333.5bp,148.5bp) node {$ack_{out}$};
+  \draw [->] (p_1q_1) ..controls (249.08bp,163.44bp) and (230.95bp,144.16bp)  .. (222.0bp,123.0bp) .. controls (211.66bp,98.586bp) and (210.2bp,68.115bp)  .. (p_2q_2);
+  \draw (278.0bp,105.0bp) node {$ack_{in}|ack_{out}$};
+  \draw [->] (p_2q_0) ..controls (34.756bp,163.36bp) and (35.346bp,150.36bp)  .. (41.997bp,141.0bp) .. controls (50.995bp,128.34bp) and (65.471bp,120.24bp)  .. (p_2q_1);
+  \draw (70.997bp,148.5bp) node {$hello_{in}$};
+  \draw [->] (p_0q_0) ..controls (170.41bp,351.29bp) and (152.44bp,342.85bp)  .. (140.0bp,330.0bp) .. controls (133.8bp,323.6bp) and (129.45bp,315.04bp)  .. (p_1q_0);
+  \draw (173.0bp,322.5bp) node {$hello_{out}$};
+  \draw [->] (p_0q_0) ..controls (278.0bp,337.91bp) and (330.85bp,313.23bp)  .. (p_0q_1);
+  \draw (351.0bp,322.5bp) node {$hello_{in}$};
+  \draw [->] (p_0q_1) ..controls (393.31bp,247.47bp) and (388.39bp,227.67bp)  .. (386.0bp,210.0bp) .. controls (382.48bp,184.08bp) and (381.66bp,154.22bp)  .. (p_1q_2);
+  \draw (449.5bp,192.0bp) node {$hello_{out}|ack_{out}$};
+  \draw [->] (p_0q_1) ..controls (453.57bp,250.43bp) and (497.35bp,227.03bp)  .. (p_0q_2);
+  \draw (520.5bp,235.5bp) node {$ack_{out}$};
+  \draw [->] (p_0q_1) ..controls (340.56bp,258.2bp) and (298.37bp,244.39bp)  .. (297.0bp,243.0bp) .. controls (290.96bp,236.89bp) and (287.2bp,228.51bp)  .. (p_1q_1);
+  \draw (330.0bp,235.5bp) node {$hello_{out}$};
+  \draw [->] (p_1q_0) ..controls (73.4bp,263.58bp) and (58.458bp,255.31bp)  .. (48.997bp,243.0bp) .. controls (44.047bp,236.56bp) and (41.361bp,228.31bp)  .. (p_2q_0);
+  \draw (74.497bp,235.5bp) node {$ack_{in}$};
+%
+\end{tikzpicture}

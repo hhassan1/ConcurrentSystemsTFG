@@ -1,0 +1,4 @@
+digraph LTSP {
+    p_0 -> p_F1 [style=dotted];
+    p_0 -> p_Fn [style=dotted];
+}

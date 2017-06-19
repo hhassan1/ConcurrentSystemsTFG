@@ -1,0 +1,4 @@
+digraph LTSBlockedQ {
+    q -> q_1 [label="a"];
+    q_1 -> q [label="b"];
+}

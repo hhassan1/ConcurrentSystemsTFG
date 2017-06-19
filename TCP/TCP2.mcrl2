@@ -1,0 +1,133 @@
+sort Window = struct window(s:SenderWindow, r:ReceiverWindow);
+sort SenderWindow = struct sender_window(s_buffer:List(Nat), last_ack_packet:Nat, packets_sent:Nat, repeated_acks:Nat);
+sort ReceiverWindow = struct receiver_window(r_buffer:List(Nat), next_packet_to_ack:Nat, waiting_ack:Nat);
+sort Message = struct message(size:Nat);
+sort IP = struct ip1 | ip2;
+sort TimerType = struct confirmation | retransmission;
+
+
+map sendPacket                  : SenderWindow # Nat -> SenderWindow;
+    acknowledgeSentPacket       : SenderWindow # Nat -> SenderWindow;
+    receivePacket               : ReceiverWindow # Nat -> ReceiverWindow;
+    acknowledgeReceivedPacket   : ReceiverWindow # Nat -> ReceiverWindow;
+    nextSequence                : SenderWindow -> Nat;
+    nextAcknowledge             : ReceiverWindow -> Nat;
+    firstNotAcknowledged        : SenderWindow -> Nat;
+var a, b, c, r : Nat;
+    d : Nat;
+    l, x : List(Nat);
+    ss : SenderWindow;
+    rr : ReceiverWindow;
+eqn 
+    d == b -> sendPacket(sender_window(l,a,b,r),d) = sender_window(l <| d,a,b+1,r);
+    acknowledgeSentPacket(sender_window(l,a,b,r),d) = sender_window(removeLessEqual(l,d),head(removeLessEqual(l,d)),b,r);
+    c < a   -> receivePacket(receiver_window(l,a,b),c) = receiver_window(l,a,b);
+    c < b   -> receivePacket(receiver_window(l,a,b),c) = receiver_window(addOrdered(l,c),a,b);
+    c >= b  -> receivePacket(receiver_window(l,a,b),c) = receiver_window(l<|c,a,c);
+    a <= c && c < b   -> acknowledgeReceivedPacket(receiver_window(l,a,b),c) = receiver_window(removeLessEqual(l,c),c+1,b);
+    firstNotAcknowledged(sender_window(l,a,b,r)) = head(l);
+    nextSequence(sender_window(l,a,b,r)) = b;
+    nextAcknowledge(receiver_window(l,a,b)) = getLastConsecutive(l,a);
+
+map getLastConsecutive  : List(Nat) # Nat -> Nat;
+    addOrdered          : List(Nat) # Nat -> List(Nat);
+    removeOrdered       : List(Nat) # Nat -> List(Nat);
+    removeLessEqual     : List(Nat) # Nat -> List(Nat);
+var a, b, c : Nat;
+    l : List(Nat);
+eqn getLastConsecutive([],a) = a;
+    a + 1 < b -> getLastConsecutive(b |> l,a) = a;
+    a + 1 == b -> getLastConsecutive(b |> l,a) = getLastConsecutive(l,b);
+    addOrdered([], a) = [a];
+    a < b -> addOrdered(a |> l, b) = a |> addOrdered(l, b);
+    a == b -> addOrdered(a |> l, b) = l;
+    a > b -> addOrdered(a |> l, b) = b |> a |> l;
+    removeOrdered([], a) = [];
+    a < b -> removeOrdered(a |> l, b) = a |> removeOrdered(l, b);
+    a == b -> removeOrdered(a |> l, b) = l;
+    a > b -> removeOrdered(a |> l, b) = a |> l;
+    removeLessEqual([], a) = [];
+    a < b -> removeLessEqual(a |> l, b) = removeLessEqual(l, b);
+    a == b -> removeLessEqual(a |> l, b) = l;
+    a > b -> removeLessEqual(a |> l, b) = a |> l;
+
+
+map createWindow : Window;
+var m : Message;
+eqn createWindow = window(createSenderWindow,createReceiverWindow);
+
+map createSenderWindow : SenderWindow;
+    createReceiverWindow : ReceiverWindow;
+eqn createSenderWindow = sender_window([],0,0,0);
+eqn createReceiverWindow = receiver_window([],0,0);
+
+
+
+
+act send, receive, tcp_packet : Nat;
+    send_ack, receive_ack, tcp_ack : Nat;
+    input : Nat;
+    output : Nat;
+    i;
+
+
+
+proc
+    Sender(window : SenderWindow, time : Nat, retransmission_time : Nat) =
+      sum t : Nat, packet : Nat.(t > 0) ->(
+        (retransmission_time > 0) -> ResendPacket(window, retransmission_time) +
+        (repeated_acks(window) >= 3) -> ResendPacket(window, time + t) +
+        input(packet).SendPacket(window, time + t, packet) +
+        ReceiveACK(window, time + t)
+      );
+
+    ReceiveACK(window : SenderWindow, time : Nat) =
+      sum ack : Nat.receive_ack(ack).Sender(acknowledgeSentPacket(window,ack),time,0);
+
+    ResendPacket(window : SenderWindow, time : Nat) =
+      SendPacket(window, time, firstNotAcknowledged(window));
+
+    SendPacket(window : SenderWindow, time : Nat, packet : Nat) = 
+      (i.send(packet) + i).Sender(sendPacket(window,packet), time, time + 1000);
+
+    Receiver(window : ReceiverWindow, time : Nat, confirmation_time : Nat) =
+      sum t : Nat.(t > 0)->(
+        (confirmation_time > 0) -> SendACK(window, confirmation_time) +
+        (waiting_ack(window) == 2)->SendACK(window, time + t) +
+        ReceivePacket(window, time + t)
+      );
+
+    SendACK(window : ReceiverWindow, time : Nat) = 
+      sum ack : Nat.
+        (ack == nextAcknowledge(window)) ->
+          Dispatch(window).
+          (i.send_ack(ack) + i).Receiver(acknowledgeReceivedPacket(window,ack), time, 0);
+
+    ReceivePacket(window : ReceiverWindow, time : Nat) =
+      sum seq : Nat, w:ReceiverWindow, a, b:Nat.
+        receive(seq).
+        (w == receivePacket(window,seq) && 
+         a == nextAcknowledge(window) && 
+         b == nextAcknowledge(w))
+          ->
+          (a == b || a + 1 > b) 
+            ->
+              SendACK(w, time) 
+            <> 
+              Receiver(w, time, time + 500);
+
+
+
+
+    Dispatch(window : ReceiverWindow) =
+      InnerDispatch(head(r_buffer(window)), nextAcknowledge(window));
+    InnerDispatch(data : Nat, fin : Nat) =
+      output(data).(data < fin) -> InnerDispatch(data+1,fin);
+
+init allow({input,output},
+        hide({tcp_packet, tcp_ack, i},
+        comm({send | receive -> tcp_packet,
+              send_ack | receive_ack -> tcp_ack},
+              Sender(createSenderWindow, 0, 0) || Receiver(createReceiverWindow, 0, 0)
+            ))
+      );

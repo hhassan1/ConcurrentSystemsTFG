@@ -1,0 +1,1 @@
+nu X. mu Y. ((<lock(c1)>true && [!(lock(c1))]X) || ((!(<lock(c1)>true)) && [true]Y))

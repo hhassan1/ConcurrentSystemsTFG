@@ -1,0 +1,29 @@
+act p_give, p, hold : Nat;
+    v_return, v, release : Nat;
+    eat, think: Nat;
+    
+proc
+  Mem(sem1,sem2,sem3,sem4,sem5 : Int) =
+    (sem1 > 0)->p_give(1).Mem(sem1-1,sem2,sem3,sem4,sem5) + 
+    (sem2 > 0)->p_give(2).Mem(sem1,sem2-1,sem3,sem4,sem5) + 
+    (sem3 > 0)->p_give(3).Mem(sem1,sem2,sem3-1,sem4,sem5) + 
+    (sem4 > 0)->p_give(4).Mem(sem1,sem2,sem3,sem4-1,sem5) + 
+    (sem5 > 0)->p_give(5).Mem(sem1,sem2,sem3,sem4,sem5-1) + 
+    v_return(1).Mem(sem1+1,sem2,sem3,sem4,sem5)+
+    v_return(2).Mem(sem1,sem2+1,sem3,sem4,sem5)+
+    v_return(3).Mem(sem1,sem2,sem3+1,sem4,sem5)+
+    v_return(4).Mem(sem1,sem2,sem3,sem4+1,sem5)+
+    v_return(5).Mem(sem1,sem2,sem3,sem4,sem5+1);
+  Philosopher(i : Nat) =
+    p(i).p(i+1).eat(i).v(i).v(i+1).think(i).Philosopher(i);
+  LastPhilosopher =
+    p(1).p(5).eat(5).v(1).v(5).think(5).LastPhilosopher;
+
+init  hide({hold,release},
+        allow({eat,think,hold,release},
+          comm({p_give|p->hold,
+                v_return|v->release},
+            Philosopher(1) || Philosopher(2) || Philosopher(3) || Philosopher(4) || LastPhilosopher || Mem(1,1,1,1,1)
+          )
+        )
+      );

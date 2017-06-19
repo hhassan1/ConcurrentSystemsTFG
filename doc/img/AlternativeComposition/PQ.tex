@@ -1,0 +1,57 @@
+
+\begin{tikzpicture}[>=latex,line join=bevel,]
+%%
+\begin{scope}
+  \pgfsetstrokecolor{black}
+  \definecolor{strokecol}{rgb}{1.0,1.0,1.0};
+  \pgfsetstrokecolor{strokecol}
+  \definecolor{fillcol}{rgb}{1.0,1.0,1.0};
+  \pgfsetfillcolor{fillcol}
+  \filldraw (0.0bp,0.0bp) -- (0.0bp,210.0bp) -- (360.0bp,210.0bp) -- (360.0bp,0.0bp) -- cycle;
+\end{scope}
+\begin{scope}
+  \pgfsetstrokecolor{black}
+  \definecolor{strokecol}{rgb}{1.0,1.0,1.0};
+  \pgfsetstrokecolor{strokecol}
+  \definecolor{fillcol}{rgb}{1.0,1.0,1.0};
+  \pgfsetfillcolor{fillcol}
+  \filldraw (0.0bp,0.0bp) -- (0.0bp,210.0bp) -- (360.0bp,210.0bp) -- (360.0bp,0.0bp) -- cycle;
+\end{scope}
+  \node (pq_0) at (171.0bp,192.0bp) [draw,ellipse] {$pq_0$};
+  \node (q_2) at (333.0bp,105.0bp) [draw,ellipse] {$q_2$};
+  \node (q_1) at (243.0bp,105.0bp) [draw,ellipse] {$q_1$};
+  \node (q_0) at (288.0bp,18.0bp) [draw,ellipse] {$q_0$};
+  \node (p_2) at (99.0bp,105.0bp) [draw,ellipse] {$p_2$};
+  \node (p_3) at (171.0bp,105.0bp) [draw,ellipse] {$p_3$};
+  \node (p_0) at (119.0bp,18.0bp) [draw,ellipse] {$p_0$};
+  \node (p_1) at (27.0bp,105.0bp) [draw,ellipse] {$p_1$};
+  \draw [->] (pq_0) ..controls (195.3bp,162.31bp) and (211.31bp,143.41bp)  .. (q_1);
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (216.0bp,148.5bp) node {$b$};
+  \draw [->] (pq_0) ..controls (221.46bp,164.52bp) and (271.73bp,138.15bp)  .. (q_2);
+  \draw (265.5bp,148.5bp) node {$a$};
+  \draw [->] (p_3) ..controls (150.68bp,83.537bp) and (144.58bp,76.284bp)  .. (140.0bp,69.0bp) .. controls (135.42bp,61.714bp) and (131.43bp,53.257bp)  .. (p_0);
+  \draw (143.5bp,61.5bp) node {$a$};
+  \draw [->] (q_0) ..controls (272.88bp,47.555bp) and (263.92bp,64.491bp)  .. (q_1);
+  \draw (273.0bp,61.5bp) node {$b$};
+  \draw [->] (p_0) ..controls (137.81bp,39.702bp) and (143.55bp,46.92bp)  .. (148.0bp,54.0bp) .. controls (152.7bp,61.475bp) and (157.01bp,70.069bp)  .. (p_3);
+  \draw (161.0bp,61.5bp) node {$b$};
+  \draw [->] (p_0) ..controls (111.45bp,41.389bp) and (109.49bp,47.939bp)  .. (108.0bp,54.0bp) .. controls (106.19bp,61.335bp) and (104.59bp,69.358bp)  .. (p_2);
+  \draw (111.5bp,61.5bp) node {$a$};
+  \draw [->] (q_0) ..controls (303.12bp,47.555bp) and (312.08bp,64.491bp)  .. (q_2);
+  \draw (317.5bp,61.5bp) node {$a$};
+  \draw [->] (p_0) ..controls (89.129bp,46.599bp) and (66.764bp,67.262bp)  .. (p_1);
+  \draw (82.5bp,61.5bp) node {$a$};
+  \draw [->] (pq_0) ..controls (125.49bp,164.14bp) and (83.554bp,139.38bp)  .. (p_1);
+  \draw (111.5bp,148.5bp) node {$a$};
+  \draw [->] (pq_0) ..controls (171.0bp,162.16bp) and (171.0bp,146.55bp)  .. (p_3);
+  \draw (175.0bp,148.5bp) node {$b$};
+  \draw [->] (q_1) ..controls (270.71bp,90.97bp) and (277.73bp,88.404bp)  .. (284.5bp,87.0bp) .. controls (290.96bp,85.659bp) and (297.71bp,86.571bp)  .. (q_2);
+  \draw (288.0bp,94.5bp) node {$a$};
+  \draw [->] (q_1) ..controls (278.03bp,105.0bp) and (286.97bp,105.0bp)  .. (q_2);
+  \draw (288.0bp,115.5bp) node {$a$};
+  \draw [->] (pq_0) ..controls (146.7bp,162.31bp) and (130.69bp,143.41bp)  .. (p_2);
+  \draw (143.5bp,148.5bp) node {$a$};
+%
+\end{tikzpicture}

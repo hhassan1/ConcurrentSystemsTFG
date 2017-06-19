@@ -1,0 +1,17 @@
+
+\begin{tikzpicture}[>=latex,line join=bevel,]
+%%
+\node (factorial_n) at (57.195bp,105.0bp) [draw,ellipse] {$factorial(n)$};
+  \node (factorial_n_i) at (287.19bp,105.0bp) [draw,ellipse] {$factorial(n,i)$};
+  \node (factorial_n_1_i_n) at (203.19bp,18.0bp) [draw,ellipse] {$factorial(n-1,i*n)$};
+  \node (result_i) at (371.19bp,18.0bp) [draw,ellipse] {$\underline{result(i)}$};
+  \node (factorial_n_1) at (57.195bp,18.0bp) [draw,ellipse] {$factorial(n,1)$};
+  \draw [->] (factorial_n_i) ..controls (258.53bp,74.993bp) and (241.1bp,57.361bp)  .. (factorial_n_1_i_n);
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (262.19bp,61.5bp) node {$n>0$};
+  \draw [->] (factorial_n_i) ..controls (315.86bp,74.993bp) and (333.29bp,57.361bp)  .. (result_i);
+  \draw (350.69bp,61.5bp) node {$n==0$};
+  \draw [->] (factorial_n) ..controls (57.195bp,75.163bp) and (57.195bp,59.548bp)  .. (factorial_n_1);
+%
+\end{tikzpicture}

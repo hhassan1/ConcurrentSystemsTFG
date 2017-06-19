@@ -1,0 +1,1 @@
+forall c:C.mu X.nu Y.((<cs(c)>Y || [true]X) && (<!cs(c)>X || [true]Y))

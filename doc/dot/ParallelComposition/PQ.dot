@@ -1,0 +1,21 @@
+digraph LTSPQ {
+    p_0q_0 -> p_1q_0 [label="a"];
+    p_0q_0 -> p_1q_1 [label="a|c"];
+    p_0q_0 -> p_0q_1 [label="c"];
+    p_0q_1 -> p_1q_1 [label="a"];
+    p_0q_1 -> p_1q_2 [label="a|d"];
+    p_0q_1 -> p_0q_2 [label="d"];
+    p_0q_2 -> p_1q_2 [label="a"];
+    p_1q_0 -> p_2q_0 [label="b"];
+    p_1q_0 -> p_2q_1 [label="b|c"];
+    p_1q_0 -> p_1q_1 [label="c"];
+    p_1q_1 -> p_2q_1 [label="b"];
+    p_1q_1 -> p_2q_2 [label="b|d"];
+    p_1q_1 -> p_1q_2 [label="d"];
+    p_1q_2 -> p_2q_2 [label="b"];
+    p_2q_0 -> p_2q_1 [label="c"];
+    p_2q_1 -> p_2q_2 [label="d"];
+    {rank = same; p_0q_1; p_1q_0}
+    {rank = same; p_2q_0; p_1q_1; p_0q_2}
+    {rank = same; p_2q_1; p_1q_2}
+}

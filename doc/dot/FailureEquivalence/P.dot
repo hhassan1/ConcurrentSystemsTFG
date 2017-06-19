@@ -1,0 +1,10 @@
+digraph LTSP {
+    p_0 -> p_1 [label="a"];
+    p_0 -> p_2 [label="a"];
+    p_1 -> p_3 [label="b"];
+    p_1 -> p_4 [label="c"];
+    p_2 -> p_5 [label="c"];
+    p_2 -> p_6 [label="f"];
+    p_4 -> p_7 [label="d"];
+    p_5 -> p_8 [label="e"];
+}

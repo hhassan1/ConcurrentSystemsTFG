@@ -1,0 +1,10 @@
+digraph LTSFactorial {
+    factorial_n [label="factorial(n)"];
+    factorial_n_1 [label="factorial(n,1)"];
+    factorial_n_i [label="factorial(n,i)"];
+    factorial_n_1_i_n [label="factorial(n-1,i*n)"];
+    result_i [label="\underline{result(i)}"]
+    factorial_n -> factorial_n_1;
+    factorial_n_i -> factorial_n_1_i_n [label="n>0"];
+    factorial_n_i -> result_i [label="n==0"];
+}

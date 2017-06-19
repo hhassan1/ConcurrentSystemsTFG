@@ -1,0 +1,24 @@
+
+\begin{tikzpicture}[>=latex,line join=bevel,]
+%%
+\begin{scope}
+  \pgfsetstrokecolor{black}
+  \definecolor{strokecol}{rgb}{1.0,1.0,1.0};
+  \pgfsetstrokecolor{strokecol}
+  \definecolor{fillcol}{rgb}{1.0,1.0,1.0};
+  \pgfsetfillcolor{fillcol}
+  \filldraw (0.0bp,0.0bp) -- (0.0bp,123.0bp) -- (144.0bp,123.0bp) -- (144.0bp,0.0bp) -- cycle;
+\end{scope}
+  \node (q_2) at (117.0bp,18.0bp) [draw,ellipse] {$q_2$};
+  \node (q_1) at (27.0bp,18.0bp) [draw,ellipse] {$q_1$};
+  \node (q_0) at (72.0bp,105.0bp) [draw,ellipse] {$q_0$};
+  \draw [->] (q_0) ..controls (56.849bp,75.382bp) and (47.882bp,58.443bp)  .. (q_1);
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (57.0bp,61.5bp) node {$b$};
+  \draw [->] (q_0) ..controls (87.151bp,75.382bp) and (96.118bp,58.443bp)  .. (q_2);
+  \draw (101.5bp,61.5bp) node {$a$};
+  \draw [->] (q_1) ..controls (62.028bp,18.0bp) and (70.967bp,18.0bp)  .. (q_2);
+  \draw (72.0bp,28.5bp) node {$a$};
+%
+\end{tikzpicture}

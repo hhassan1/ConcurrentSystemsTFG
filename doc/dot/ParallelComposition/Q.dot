@@ -1,0 +1,4 @@
+digraph LTSQ {
+    q_0 -> q_1 [label="c"];
+    q_1 -> q_2 [label="d"];
+}

@@ -1,0 +1,1 @@
+forall x,y : Nat.<true*.input(x).true*.input(y)>true => <true*.output(x).true*.output(y)>true

@@ -1,0 +1,14 @@
+
+\begin{tikzpicture}[>=latex,line join=bevel,]
+%%
+\node (q_2) at (27.0bp,18.0bp) [draw,ellipse] {$q_2$};
+  \node (q_1) at (27.0bp,105.0bp) [draw,ellipse] {$q_1$};
+  \node (q_0) at (27.0bp,192.0bp) [draw,ellipse] {$q_0$};
+  \draw [->] (q_0) ..controls (27.0bp,162.16bp) and (27.0bp,146.55bp)  .. (q_1);
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (30.5bp,148.5bp) node {$c$};
+  \draw [->] (q_1) ..controls (27.0bp,75.163bp) and (27.0bp,59.548bp)  .. (q_2);
+  \draw (31.0bp,61.5bp) node {$d$};
+%
+\end{tikzpicture}

@@ -1,0 +1,16 @@
+sort C = struct c1 | c2;
+act give_lock, ask_for_lock, lock : C;
+    lock_freed, free_lock, unlock : C;
+    cs, no_cs : C;
+    
+proc
+  Client(c : C) =
+    no_cs(c).ask_for_lock(c).cs(c).free_lock(c).Client(c);
+  Lock = 
+    sum c:C.give_lock(c).lock_freed(c).Lock;
+
+init  allow({lock, unlock, cs, no_cs},
+        comm({give_lock|ask_for_lock->lock,
+              lock_freed|free_lock->unlock},
+              Client(c1) || Client(c2) || Lock            )
+      );

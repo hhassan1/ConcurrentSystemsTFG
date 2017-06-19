@@ -1,0 +1,98 @@
+sort Distance = struct D(cost:Pos,next:CRouter)?isDistance | Infinite?isInfinite;
+map n : Pos;
+eqn n = 4;
+map m : Pos;
+eqn m = 4;
+
+sort CRouter = struct None | R0 | R1 | R2 | R3;
+sort CNet = struct None | N0 | N1 | N2 | N3;
+
+map succ : CRouter -> CRouter;
+eqn succ(R0) = R1;
+    succ(R1) = R2;
+    succ(R2) = R3;
+    succ(R3) = None;
+    succ(None) = None;
+
+map succ : CNet -> CNet;
+eqn succ(N0) = N1;
+    succ(N1) = N2;
+    succ(N2) = N3;
+    succ(N3) = None;
+    succ(None) = None;
+
+map constUnk : CNet -> Distance;
+var vv : CNet;
+eqn constUnk(vv) = Infinite;
+
+map mix : CRouter # CRouter # (CNet->Distance) # (CNet->Distance)-> (Nat->Distance);
+var ipA, ipB : Nat;
+    a, b : (Nat->Distance);
+    m : Pos;
+eqn mix(ipA,ipB,a,b,m) = mix_aux(ipA,ipB,a,b,N0,m);
+
+map less : CRouter # CRouter # CNet # (CNet -> Distance) # (CNet -> Distance) -> (CNet -> Distance);
+var ipA, ipB : CRouter;
+    pos : CNet;
+    a, b : (CNet->Distance);
+eqn isDistance(a(pos)) && isDistance(b(pos)) -> less(ipA,ipB,pos,a,b) = if(cost(a(pos))>=cost(b(pos)) || next(b(pos))==ipA,a,a[pos->D(cost(b(pos))+1,ipB)]);
+    isInfinite(a(pos)) && isDistance(b(pos)) -> less(ipA,ipB,pos,a,b) = a[pos->D(cost(b(pos))+1,ipB)];
+    isInfinite(b(pos)) -> less(ipA,ipB,pos,a,b) = a;
+
+
+map mix_aux : CRouter # CRouter # (CNet->Distance) # (CNet->Distance) # CNet -> (CNet->Distance);
+var a, b : (CNet->Distance);
+    ipA, ipB : CRouter;
+    curr : CNet
+eqn curr == None -> mix_aux(ipA,ipB,a,b,curr) = a;
+    curr != None -> mix_aux(ipA,ipB,a,b,curr) = mix_aux(ipA,ipB,less(ipA,ipB,curr,a,b),b,succ(curr),m);
+
+map adjacent : CRouter # CRouter -> Bool;
+var x,y : CRouter;
+eqn adjacent(x,y) = exists z : CNet. connected(x,z) && connected(y,z);
+
+map connected : CRouter # CNet -> Bool;
+var x : CRouter;
+    y : CNet;
+eqn connected(R0,N0) = true;
+    connected(R1,N0) = true;
+    connected(R1,N1) = true;
+    connected(R1,N2) = true;
+    connected(R2,N1) = true;
+    connected(R2,N3) = true;
+    connected(R3,N2) = true;
+    connected(R3,N3) = true;
+    connected(x,y) = false;
+
+act send_request, receive_request, request : Nat # Nat;
+    send_response, receive_response, response : Nat # Nat # (Nat -> Distance);
+    connection_error, broken_link, failure : Nat;
+    
+proc
+  FailingRouter(i : CRouter) =
+    router_failure(i).FailingRouter(i);
+
+  SetUp(i : CRouter) = 
+    SetUp(i,constUnk);
+  SetUp(i : CRouter, distances : CNet -> Distance) =
+    (exists j:CNet.connected(i,j)&&isInfinite(distances(j))) ->
+      SetUp(i,distances[j->D(0,None)])
+        <>
+      Router(i,distances);
+
+  Router(i : CRouter, distances : CNet -> Distance) = 
+    (sum j:CRouter.(adjacent(i,j))->(send_request(i,j).Router(i,distances) + broken_link(j).Router(i,distances[j->Infinite]))) +
+    (sum j:CRouter.receive_request(j,i).send_response(i,j,distances).Router(i,distances)) +
+    (sum j:CRouter,table:(CNet->Distance).receive_response(j,i,table).Router(i,mix(i,j,distances,table,m))) +
+    tau.FailingRouter(i);
+
+init  allow({request,failure,response},
+        comm({connection_error | broken_link -> failure,
+              send_request | receive_request -> request,
+              send_response | receive_response -> response},
+          SetUp(0) ||
+          SetUp(1) ||
+          SetUp(2) ||
+          SetUp(3)
+        )
+      );

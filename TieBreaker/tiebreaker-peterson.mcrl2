@@ -1,0 +1,41 @@
+sort C = struct c1 | c2;
+
+map not : C -> C;
+eqn not(c1) = c2;
+    not(c2) = c1;
+
+act output, read, readMem : C # Bool;
+    input, write, writeMem : C # Bool;
+    outputTurn, readTurn, readTurnMem : C;
+    inputTurn, writeTurn, writeTurnMem : C;
+    lock, unlock : C;
+    no_cs, cs : C;
+    
+proc
+  FlagMem(flag1,flag2:Bool,turn:C) =
+    sum c:C.
+    (output(c1,flag1).FlagMem(flag1,flag2,turn) +
+     output(c2,flag2).FlagMem(flag1,flag2,turn) +
+     outputTurn(turn).FlagMem(flag1,flag2,turn)) +
+     sum f:Bool.input(c1,f).FlagMem(f,flag2,turn) +
+     sum f:Bool.input(c2,f).FlagMem(flag1,f,turn) +
+     sum t:C.inputTurn(t).FlagMem(flag1,flag2,t);
+  Client(c : C) =
+    write(c,true).writeTurn(c).BusyWait(c);
+  BusyWait(c : C) =
+    sum a1:Bool.read(not(c),a1).sum a2:C.readTurn(a2).
+      (a1 && a2 == c) ->
+        BusyWait(c)
+          <>
+        lock(c).unlock(c).write(c,false).Client(c);
+
+init  hide({readMem, writeMem, readTurnMem, writeTurnMem},
+        allow({no_cs, cs, lock,unlock,readMem, writeMem, readTurnMem, writeTurnMem},  
+          comm({output|read->readMem,
+                input|write->writeMem,
+                outputTurn|readTurn->readTurnMem,
+                inputTurn|writeTurn->writeTurnMem},
+                Client(c1) || Client(c2) || FlagMem(false,false,c1)
+          )
+        )
+      );

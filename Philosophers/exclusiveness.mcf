@@ -1,0 +1,1 @@
+[true*.lock(c1).(!unlock(c1))*.lock(c2)]false && [true*.lock(c2).(!unlock(c2))*.lock(c1)]false

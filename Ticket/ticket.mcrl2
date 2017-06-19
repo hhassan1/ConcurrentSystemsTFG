@@ -1,0 +1,52 @@
+
+map n : Pos;
+eqn n = 5;
+
+map modN : Nat # Pos -> Nat;
+var v : Nat;
+    n : Pos;
+eqn modN(v,n) = if(v==n,0,v);
+map constZero : Nat -> Nat;
+var vv : Nat;
+eqn constZero(vv) = 0;
+
+act outputNext, readNext, rNext : Nat;
+    outputTurn, readTurn, rTurn : Nat # Nat;
+    outputAndAddOne, fetchAndAddOne, faNumber: Nat;
+    inputTurn, writeTurn, wTurn: Nat # Nat;
+    inputNext, writeNext, wNext: Nat;
+    lock, unlock : Nat;
+    
+proc
+  Mem(number,next:Nat,turn:Nat->Nat) =
+    (outputNext(next) + 
+     sum i:Nat.outputTurn(i,turn(i))).Mem(number,next,turn) +
+    outputAndAddOne(number).Mem(modN(number+1,n),next,turn) +
+    sum value:Nat.(
+      sum i: Nat.inputTurn(i,value).Mem(number,next,turn[i->value]) +
+      inputNext(value).Mem(number,modN(value,n),turn));
+  Client(i : Nat) =
+    sum number:Nat.fetchAndAddOne(number).writeTurn(i,number).BusyWait(i);
+  BusyWait(i : Nat) =
+    sum turn:Nat.readTurn(i,turn).sum next:Nat.readNext(next).
+      (turn != next) ->
+        BusyWait(i)
+          <>
+        lock(i).unlock(i).sum next2:Nat.readNext(next2).writeNext(next2+1).Client(i);
+
+init  hide({rNext, rTurn, faNumber, wTurn, wNext},
+        allow({lock,unlock,rNext, rTurn, faNumber, wTurn, wNext},
+          comm({outputNext | readNext -> rNext,
+                outputTurn | readTurn -> rTurn,
+                outputAndAddOne | fetchAndAddOne -> faNumber,
+                inputTurn | writeTurn -> wTurn,
+                inputNext | writeNext -> wNext},
+                Client(0) ||
+                Client(1) ||
+                Client(2) ||
+                Client(3) ||
+                Client(5) ||
+                Mem(0,0,constZero)
+          )
+        )
+      );

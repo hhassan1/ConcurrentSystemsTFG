@@ -1,0 +1,22 @@
+digraph LTSProcess {
+    {ratio=compress}
+    p_0q_0 -> p_1q_0 [label="hello_{out}"];
+    p_0q_0 -> p_1q_1 [label="hello_{out}|hello_{in}"];
+    p_0q_0 -> p_0q_1 [label="hello_{in}"];
+    p_0q_1 -> p_1q_1 [label="hello_{out}"];
+    p_0q_1 -> p_1q_2 [label="hello_{out}|ack_{out}"];
+    p_0q_1 -> p_0q_2 [label="ack_{out}"];
+    p_0q_2 -> p_1q_2 [label="hello_{out}"];
+    p_1q_0 -> p_2q_0 [label="ack_{in}"];
+    p_1q_0 -> p_2q_1 [label="ack_{in}|hello_{in}"];
+    p_1q_0 -> p_1q_1 [label="hello_{in}"];
+    p_1q_1 -> p_2q_1 [label="ack_{in}"];
+    p_1q_1 -> p_2q_2 [label="ack_{in}|ack_{out}"];
+    p_1q_1 -> p_1q_2 [label="ack_{out}"];
+    p_1q_2 -> p_2q_2 [label="ack_{in}"];
+    p_2q_0 -> p_2q_1 [label="hello_{in}"];
+    p_2q_1 -> p_2q_2 [label="ack_{out}"];
+    {rank = same; p_0q_1; p_1q_0}
+    {rank = same; p_2q_0; p_1q_1; p_0q_2}
+    {rank = same; p_2q_1; p_1q_2}
+}

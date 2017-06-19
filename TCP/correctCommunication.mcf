@@ -1,0 +1,1 @@
+forall x : Nat.<true*.input(x).true*.output(x)>true

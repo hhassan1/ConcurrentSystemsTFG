@@ -1,0 +1,16 @@
+
+\begin{tikzpicture}[>=latex,line join=bevel,]
+%%
+\node (q_n) at (107.55bp,18.0bp) [draw,ellipse] {$q_n$};
+  \node (p_Fn) at (109.55bp,90.0bp) [draw,ellipse] {$p_Fn$};
+  \node (p_F1) at (30.547bp,90.0bp) [draw,ellipse] {$p_F1$};
+  \node (q_1) at (32.547bp,18.0bp) [draw,ellipse] {$q_1$};
+  \node (p_0) at (69.547bp,162.0bp) [draw,ellipse] {$p_0$};
+  \draw [->] (p_F1) ..controls (31.262bp,63.983bp) and (31.527bp,54.712bp)  .. (q_1);
+  \draw [->,dotted] (p_0) ..controls (55.844bp,136.4bp) and (50.056bp,126.02bp)  .. (p_F1);
+  \draw [->] (p_Fn) ..controls (108.83bp,63.983bp) and (108.57bp,54.712bp)  .. (q_n);
+  \draw [->] (p_Fn) ..controls (82.608bp,64.51bp) and (67.842bp,51.086bp)  .. (q_1);
+  \draw [->,dotted] (p_0) ..controls (83.602bp,136.4bp) and (89.538bp,126.02bp)  .. (p_Fn);
+  \draw [->] (p_F1) ..controls (57.487bp,64.51bp) and (72.253bp,51.086bp)  .. (q_n);
+%
+\end{tikzpicture}
