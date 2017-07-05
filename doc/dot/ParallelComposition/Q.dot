@@ -1,4 +1,6 @@
 digraph LTSQ {
     q_0 -> q_1 [label="c"];
     q_1 -> q_2 [label="d"];
+    q_2 [label="q_2 \text{\cmark}"]
+    rankdir=LR;
 }

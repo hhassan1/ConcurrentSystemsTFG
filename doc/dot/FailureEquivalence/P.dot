@@ -7,4 +7,8 @@ digraph LTSP {
     p_2 -> p_6 [label="f"];
     p_4 -> p_7 [label="d"];
     p_5 -> p_8 [label="e"];
+    p_3 [label="p_3\text{\cmark}"]
+    p_6 [label="p_6\text{\cmark}"]
+    p_7 [label="p_7\text{\cmark}"]
+    p_8 [label="p_8\text{\cmark}"]
 }

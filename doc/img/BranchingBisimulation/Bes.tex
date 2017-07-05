@@ -1,0 +1,32 @@
+
+\begin{tikzpicture}[>=latex,line join=bevel,]
+%%
+\begin{scope}
+  \pgfsetstrokecolor{black}
+  \definecolor{strokecol}{rgb}{1.0,1.0,1.0};
+  \pgfsetstrokecolor{strokecol}
+  \definecolor{fillcol}{rgb}{1.0,1.0,1.0};
+  \pgfsetfillcolor{fillcol}
+  \filldraw (0.0bp,0.0bp) -- (0.0bp,71.0bp) -- (174.0bp,71.0bp) -- (174.0bp,0.0bp) -- cycle;
+\end{scope}
+  \node (r_0) at (11.5bp,12.0bp) [draw,ellipse] {$r_0$};
+  \node (s_0) at (11.5bp,53.0bp) [draw,ellipse] {$s_0$};
+  \node (s_2) at (162.5bp,53.0bp) [draw,ellipse] {$s_2\text{\cmark}$};
+  \node (s_1) at (87.5bp,53.0bp) [draw,ellipse] {$s_1$};
+  \node (r_1) at (87.5bp,12.0bp) [draw,ellipse] {$r_1\text{\cmark}$};
+  \draw [->] (r_0) ..controls (33.945bp,12.0bp) and (52.037bp,12.0bp)  .. (r_1);
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (49.5bp,21.0bp) node {$b$};
+  \draw (28.789bp,6.0bp) node {$$};
+  \draw (70.298bp,6.0bp) node {$$};
+  \draw [->] (s_0) ..controls (34.202bp,53.0bp) and (51.916bp,53.0bp)  .. (s_1);
+  \draw (49.5bp,61.0bp) node {$\tau$};
+  \draw (29.102bp,47.0bp) node {$$};
+  \draw (69.917bp,47.0bp) node {$$};
+  \draw [->] (s_1) ..controls (110.05bp,53.0bp) and (126.93bp,53.0bp)  .. (s_2);
+  \draw (125.0bp,62.0bp) node {$b$};
+  \draw (105.27bp,47.0bp) node {$$};
+  \draw (144.68bp,47.0bp) node {$$};
+%
+\end{tikzpicture}

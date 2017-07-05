@@ -7,4 +7,8 @@ digraph LTSQ {
     q_2 -> q_6 [label="f"];
     q_4 -> q_7 [label="e"];
     q_5 -> q_8 [label="d"];
+    q_3 [label="q_3\text{\cmark}"]
+    q_6 [label="q_6\text{\cmark}"]
+    q_7 [label="q_7\text{\cmark}"]
+    q_8 [label="q_8\text{\cmark}"]
 }

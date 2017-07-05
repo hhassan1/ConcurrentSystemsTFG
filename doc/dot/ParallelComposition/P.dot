@@ -1,4 +1,6 @@
 digraph LTSP {
     p_0 -> p_1 [label="a"];
     p_1 -> p_2 [label="b"];
+    p_2 [label="p_2 \text{\cmark}"]
+    rankdir=LR;
 }

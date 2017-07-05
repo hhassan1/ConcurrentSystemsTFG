@@ -1,41 +1,18 @@
 
 \begin{tikzpicture}[>=latex,line join=bevel,]
 %%
-\begin{scope}
-  \pgfsetstrokecolor{black}
-  \definecolor{strokecol}{rgb}{1.0,1.0,1.0};
-  \pgfsetstrokecolor{strokecol}
-  \definecolor{fillcol}{rgb}{1.0,1.0,1.0};
-  \pgfsetfillcolor{fillcol}
-\end{scope}
-\begin{scope}
-  \pgfsetstrokecolor{black}
-  \definecolor{strokecol}{rgb}{1.0,1.0,1.0};
-  \pgfsetstrokecolor{strokecol}
-  \definecolor{fillcol}{rgb}{1.0,1.0,1.0};
-  \pgfsetfillcolor{fillcol}
-\end{scope}
-\begin{scope}
-  \pgfsetstrokecolor{black}
-  \definecolor{strokecol}{rgb}{1.0,1.0,1.0};
-  \pgfsetstrokecolor{strokecol}
-  \definecolor{fillcol}{rgb}{1.0,1.0,1.0};
-  \pgfsetfillcolor{fillcol}
-\end{scope}
-  \node (p_1q_2) at (423.0bp,192.0bp) [draw,ellipse] {$p_1q_2$};
-  \node (p_1q_0) at (231.0bp,192.0bp) [draw,ellipse] {$p_1q_0$};
-  \node (p_2q_1) at (327.0bp,192.0bp) [draw,ellipse] {$p_2q_1$};
-  \node (p_2q_0) at (135.0bp,105.0bp) [draw,ellipse] {$p_2q_0$};
-  \node (p_1q_1) at (38.997bp,105.0bp) [draw,ellipse] {$p_1q_1$};
-  \node (p_0q_1) at (135.0bp,192.0bp) [draw,ellipse] {$p_0q_1$};
-  \node (p_0q_0) at (38.997bp,192.0bp) [draw,ellipse] {$p_0q_0$};
-  \node (p_0q_2) at (231.0bp,105.0bp) [draw,ellipse] {$p_0q_2$};
-  \node (p_2q_2) at (38.997bp,18.0bp) [draw,ellipse] {$p_2q_2$};
-  \draw [->] (p_1q_1) ..controls (38.997bp,75.163bp) and (38.997bp,59.548bp)  .. (p_2q_2);
+\node (p_0q_0) at (18.0bp,12.0bp) [draw,ellipse] {$p_0q_0$};
+  \node (p_2q_2) at (222.0bp,12.0bp) [draw,ellipse] {$p_2q_2 \text{\cmark}$};
+  \node (p_1q_1) at (123.0bp,12.0bp) [draw,ellipse] {$p_1q_1$};
+  \draw [->] (p_1q_1) ..controls (155.82bp,12.0bp) and (176.74bp,12.0bp)  .. (p_2q_2);
   \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
   \pgfsetstrokecolor{strokecol}
-  \draw (48.997bp,61.5bp) node {$ack$};
-  \draw [->] (p_0q_0) ..controls (38.997bp,162.16bp) and (38.997bp,146.55bp)  .. (p_1q_1);
-  \draw (52.497bp,148.5bp) node {$hello$};
+  \draw (172.5bp,21.0bp) node {$ack$};
+  \draw (147.34bp,6.0bp) node {$$};
+  \draw (197.81bp,6.0bp) node {$$};
+  \draw [->] (p_0q_0) ..controls (51.962bp,12.0bp) and (76.087bp,12.0bp)  .. (p_1q_1);
+  \draw (70.5bp,21.0bp) node {$hello$};
+  \draw (42.008bp,6.0bp) node {$$};
+  \draw (98.966bp,6.0bp) node {$$};
 %
 \end{tikzpicture}

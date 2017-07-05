@@ -1,17 +1,21 @@
 
 \begin{tikzpicture}[>=latex,line join=bevel,]
 %%
-\node (factorial_n) at (57.195bp,105.0bp) [draw,ellipse] {$factorial(n)$};
-  \node (factorial_n_i) at (287.19bp,105.0bp) [draw,ellipse] {$factorial(n,i)$};
-  \node (factorial_n_1_i_n) at (203.19bp,18.0bp) [draw,ellipse] {$factorial(n-1,i*n)$};
-  \node (result_i) at (371.19bp,18.0bp) [draw,ellipse] {$\underline{result(i)}$};
-  \node (factorial_n_1) at (57.195bp,18.0bp) [draw,ellipse] {$factorial(n,1)$};
-  \draw [->] (factorial_n_i) ..controls (258.53bp,74.993bp) and (241.1bp,57.361bp)  .. (factorial_n_1_i_n);
+\node (factorial_n) at (50.0bp,94.0bp) [draw,ellipse] {$factorial(n)$};
+  \node (factorial_n_i) at (238.0bp,94.0bp) [draw,ellipse] {$factorial(n,i)$};
+  \node (factorial_n_1_i_n) at (190.0bp,12.0bp) [draw,ellipse] {$factorial(n-1,i*n)$};
+  \node (result_i) at (285.0bp,12.0bp) [draw,ellipse] {$\text{\cmark}$};
+  \node (factorial_n_1) at (50.0bp,12.0bp) [draw,ellipse] {$factorial(n,1)$};
+  \draw [->] (factorial_n_i) ..controls (224.78bp,76.747bp) and (219.9bp,70.21bp)  .. (216.0bp,64.0bp) .. controls (209.89bp,54.252bp) and (203.98bp,42.89bp)  .. (factorial_n_1_i_n);
   \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
   \pgfsetstrokecolor{strokecol}
-  \draw (262.19bp,61.5bp) node {$n>0$};
-  \draw [->] (factorial_n_i) ..controls (315.86bp,74.993bp) and (333.29bp,57.361bp)  .. (result_i);
-  \draw (350.69bp,61.5bp) node {$n==0$};
-  \draw [->] (factorial_n) ..controls (57.195bp,75.163bp) and (57.195bp,59.548bp)  .. (factorial_n_1);
+  \draw (234.0bp,53.0bp) node {$n>0$};
+  \draw (222.95bp,76.039bp) node {$$};
+  \draw (189.03bp,30.254bp) node {$$};
+  \draw [->] (factorial_n_i) ..controls (253.22bp,67.086bp) and (268.54bp,41.017bp)  .. (result_i);
+  \draw (316.5bp,53.0bp) node {$n==0\rightarrow\underline{result}(i)$};
+  \draw (238.54bp,75.876bp) node {$$};
+  \draw (276.77bp,22.791bp) node {$$};
+  \draw [->] (factorial_n) ..controls (50.0bp,69.577bp) and (50.0bp,49.479bp)  .. (factorial_n_1);
 %
 \end{tikzpicture}

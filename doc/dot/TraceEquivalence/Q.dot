@@ -2,4 +2,6 @@ digraph LTSQ {
     q -> q_1 [label="a"];
     q_1 -> q_2 [label="b"];
     q_1 -> q_3 [label="c"];
+    q_2 [label="q_2\text{\cmark}"]
+    q_3 [label="q_3\text{\cmark}"]
 }

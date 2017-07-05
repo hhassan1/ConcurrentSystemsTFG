@@ -1,0 +1,9 @@
+digraph LTSAes {
+    p_0 -> p_1 [label=a];
+    q_0 -> q_1 [label="\\tau"];
+    q_1 -> q_2 [label=a];
+    p_1 [label="p_1\text{\cmark}"]
+    q_2 [label="q_2\text{\cmark}"]
+    {rank = same; p_0; q_0}
+    rankdir=LR;
+}

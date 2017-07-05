@@ -1,17 +1,23 @@
 
 \begin{tikzpicture}[>=latex,line join=bevel,]
 %%
-\node (q) at (63.0bp,192.0bp) [draw,ellipse] {$q$};
-  \node (q_3) at (99.0bp,18.0bp) [draw,ellipse] {$q_3$};
-  \node (q_2) at (27.0bp,18.0bp) [draw,ellipse] {$q_2$};
-  \node (q_1) at (63.0bp,105.0bp) [draw,ellipse] {$q_1$};
-  \draw [->] (q) ..controls (63.0bp,162.16bp) and (63.0bp,146.55bp)  .. (q_1);
+\node (q) at (32.987bp,153.5bp) [draw,ellipse] {$q$};
+  \node (q_3) at (52.987bp,9.5bp) [draw,ellipse] {$q_3\text{\cmark}$};
+  \node (q_2) at (12.987bp,9.5bp) [draw,ellipse] {$q_2\text{\cmark}$};
+  \node (q_1) at (32.987bp,82.5bp) [draw,ellipse] {$q_1$};
+  \draw [->] (q) ..controls (32.987bp,133.45bp) and (32.987bp,116.0bp)  .. (q_1);
   \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
   \pgfsetstrokecolor{strokecol}
-  \draw (66.5bp,148.5bp) node {$a$};
-  \draw [->] (q_1) ..controls (50.776bp,75.138bp) and (43.788bp,58.638bp)  .. (q_2);
-  \draw (52.0bp,61.5bp) node {$b$};
-  \draw [->] (q_1) ..controls (75.224bp,75.138bp) and (82.212bp,58.638bp)  .. (q_3);
-  \draw (86.5bp,61.5bp) node {$c$};
+  \draw (41.487bp,118.0bp) node {$a$};
+  \draw (26.987bp,137.76bp) node {$$};
+  \draw (26.987bp,98.386bp) node {$$};
+  \draw [->] (q_1) ..controls (22.595bp,69.622bp) and (17.442bp,62.389bp)  .. (14.987bp,55.0bp) .. controls (12.302bp,46.919bp) and (11.557bp,37.557bp)  .. (q_2);
+  \draw (22.987bp,46.0bp) node {$b$};
+  \draw (20.761bp,68.659bp) node {$$};
+  \draw (6.0bp,25.284bp) node {$$};
+  \draw [->] (q_1) ..controls (38.427bp,62.188bp) and (43.851bp,42.931bp)  .. (q_3);
+  \draw (52.987bp,46.0bp) node {$c$};
+  \draw (41.36bp,67.077bp) node {$$};
+  \draw (44.617bp,24.912bp) node {$$};
 %
 \end{tikzpicture}

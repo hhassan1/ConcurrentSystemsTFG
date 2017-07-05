@@ -3,4 +3,6 @@ digraph LTSP {
     p -> p_2 [label="a"];
     p_1 -> p_3 [label="b"];
     p_2 -> p_4 [label="c"];
+    p_3 [label="p_3\text{\cmark}"]
+    p_4 [label="p_4\text{\cmark}"]
 }

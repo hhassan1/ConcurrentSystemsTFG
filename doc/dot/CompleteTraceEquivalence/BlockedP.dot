@@ -2,4 +2,5 @@ digraph LTSBlockedP {
     p -> p_1 [label="a"];
     p -> p_2 [label="a"];
     p_1 -> p [label="b"];
+    p_2 [label="p_2\text{\cmark}"];
 }

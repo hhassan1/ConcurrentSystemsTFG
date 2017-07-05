@@ -1,0 +1,9 @@
+digraph LTSBes {
+    r_0 -> r_1 [label=b];
+    s_0 -> s_1 [label="\\tau"];
+    s_1 -> s_2 [label=b];
+    r_1 [label="r_1\text{\cmark}"]
+    s_2 [label="s_2\text{\cmark}"]
+    {rank = same; r_0; s_0}
+    rankdir=LR;
+}

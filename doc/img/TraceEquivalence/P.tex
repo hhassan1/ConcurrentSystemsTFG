@@ -1,20 +1,28 @@
 
 \begin{tikzpicture}[>=latex,line join=bevel,]
 %%
-\node (p) at (68.0bp,192.0bp) [draw,ellipse] {$p$};
-  \node (p_4) at (99.0bp,18.0bp) [draw,ellipse] {$p_4$};
-  \node (p_2) at (99.0bp,105.0bp) [draw,ellipse] {$p_2$};
-  \node (p_3) at (27.0bp,18.0bp) [draw,ellipse] {$p_3$};
-  \node (p_1) at (27.0bp,105.0bp) [draw,ellipse] {$p_1$};
-  \draw [->] (p_2) ..controls (99.0bp,75.163bp) and (99.0bp,59.548bp)  .. (p_4);
+\node (p) at (33.264bp,153.5bp) [draw,ellipse] {$p$};
+  \node (p_4) at (54.264bp,9.5bp) [draw,ellipse] {$p_4\text{\cmark}$};
+  \node (p_2) at (54.264bp,82.5bp) [draw,ellipse] {$p_2$};
+  \node (p_3) at (13.264bp,9.5bp) [draw,ellipse] {$p_3\text{\cmark}$};
+  \node (p_1) at (13.264bp,82.5bp) [draw,ellipse] {$p_1$};
+  \draw [->] (p_2) ..controls (54.264bp,62.042bp) and (54.264bp,43.449bp)  .. (p_4);
   \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
   \pgfsetstrokecolor{strokecol}
-  \draw (102.5bp,61.5bp) node {$c$};
-  \draw [->] (p_1) ..controls (27.0bp,75.163bp) and (27.0bp,59.548bp)  .. (p_3);
-  \draw (31.0bp,61.5bp) node {$b$};
-  \draw [->] (p) ..controls (78.498bp,162.22bp) and (84.466bp,145.85bp)  .. (p_2);
-  \draw (88.5bp,148.5bp) node {$a$};
-  \draw [->] (p) ..controls (54.196bp,162.38bp) and (46.025bp,145.44bp)  .. (p_1);
-  \draw (53.5bp,148.5bp) node {$a$};
+  \draw (62.264bp,46.0bp) node {$c$};
+  \draw (48.264bp,66.794bp) node {$$};
+  \draw (48.264bp,25.277bp) node {$$};
+  \draw [->] (p_1) ..controls (13.264bp,62.042bp) and (13.264bp,43.449bp)  .. (p_3);
+  \draw (21.264bp,46.0bp) node {$b$};
+  \draw (7.2638bp,66.794bp) node {$$};
+  \draw (7.2638bp,25.277bp) node {$$};
+  \draw [->] (p) ..controls (38.91bp,133.95bp) and (44.44bp,115.78bp)  .. (p_2);
+  \draw (53.764bp,118.0bp) node {$a$};
+  \draw (41.755bp,138.31bp) node {$$};
+  \draw (45.644bp,98.108bp) node {$$};
+  \draw [->] (p) ..controls (22.857bp,141.56bp) and (16.921bp,133.95bp)  .. (14.264bp,126.0bp) .. controls (11.747bp,118.48bp) and (11.168bp,109.78bp)  .. (p_1);
+  \draw (22.764bp,118.0bp) node {$a$};
+  \draw (21.391bp,140.57bp) node {$$};
+  \draw (6.0bp,98.223bp) node {$$};
 %
 \end{tikzpicture}

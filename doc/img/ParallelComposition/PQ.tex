@@ -7,6 +7,7 @@
   \pgfsetstrokecolor{strokecol}
   \definecolor{fillcol}{rgb}{1.0,1.0,1.0};
   \pgfsetfillcolor{fillcol}
+  \filldraw (0.0bp,0.0bp) -- (0.0bp,318.0bp) -- (280.0bp,318.0bp) -- (280.0bp,0.0bp) -- cycle;
 \end{scope}
 \begin{scope}
   \pgfsetstrokecolor{black}
@@ -14,6 +15,7 @@
   \pgfsetstrokecolor{strokecol}
   \definecolor{fillcol}{rgb}{1.0,1.0,1.0};
   \pgfsetfillcolor{fillcol}
+  \filldraw (0.0bp,0.0bp) -- (0.0bp,318.0bp) -- (280.0bp,318.0bp) -- (280.0bp,0.0bp) -- cycle;
 \end{scope}
 \begin{scope}
   \pgfsetstrokecolor{black}
@@ -21,49 +23,82 @@
   \pgfsetstrokecolor{strokecol}
   \definecolor{fillcol}{rgb}{1.0,1.0,1.0};
   \pgfsetfillcolor{fillcol}
+  \filldraw (0.0bp,0.0bp) -- (0.0bp,318.0bp) -- (280.0bp,318.0bp) -- (280.0bp,0.0bp) -- cycle;
 \end{scope}
-  \node (p_1q_2) at (263.0bp,105.0bp) [draw,ellipse] {$p_1q_2$};
-  \node (p_2q_1) at (113.0bp,105.0bp) [draw,ellipse] {$p_2q_1$};
-  \node (p_1q_0) at (114.0bp,279.0bp) [draw,ellipse] {$p_1q_0$};
-  \node (p_2q_0) at (38.997bp,192.0bp) [draw,ellipse] {$p_2q_0$};
-  \node (p_1q_1) at (188.0bp,192.0bp) [draw,ellipse] {$p_1q_1$};
-  \node (p_0q_1) at (263.0bp,279.0bp) [draw,ellipse] {$p_0q_1$};
-  \node (p_0q_0) at (189.0bp,366.0bp) [draw,ellipse] {$p_0q_0$};
-  \node (p_0q_2) at (336.0bp,192.0bp) [draw,ellipse] {$p_0q_2$};
-  \node (p_2q_2) at (188.0bp,18.0bp) [draw,ellipse] {$p_2q_2$};
-  \draw [->] (p_2q_1) ..controls (138.42bp,75.19bp) and (154.46bp,57.007bp)  .. (p_2q_2);
+  \node (p_1q_2) at (198.0bp,84.0bp) [draw,ellipse] {$p_1q_2$};
+  \node (p_2q_1) at (77.0bp,84.0bp) [draw,ellipse] {$p_2q_1$};
+  \node (p_1q_0) at (77.0bp,236.0bp) [draw,ellipse] {$p_1q_0$};
+  \node (p_2q_0) at (18.0bp,160.0bp) [draw,ellipse] {$p_2q_0$};
+  \node (p_1q_1) at (136.0bp,160.0bp) [draw,ellipse] {$p_1q_1$};
+  \node (p_0q_1) at (198.0bp,236.0bp) [draw,ellipse] {$p_0q_1$};
+  \node (p_0q_0) at (136.0bp,308.5bp) [draw,ellipse] {$p_0q_0$};
+  \node (p_0q_2) at (262.0bp,160.0bp) [draw,ellipse] {$p_0q_2$};
+  \node (p_2q_2) at (136.0bp,9.5bp) [draw,ellipse] {$p_2 q_2 \text{\cmark}$};
+  \draw [->] (p_2q_1) ..controls (85.943bp,65.034bp) and (94.82bp,48.961bp)  .. (105.0bp,37.0bp) .. controls (108.9bp,32.417bp) and (113.63bp,27.956bp)  .. (p_2q_2);
   \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
   \pgfsetstrokecolor{strokecol}
-  \draw (159.0bp,61.5bp) node {$d$};
-  \draw [->] (p_1q_0) ..controls (139.08bp,249.19bp) and (154.91bp,231.01bp)  .. (p_1q_1);
-  \draw (159.5bp,235.5bp) node {$c$};
-  \draw [->] (p_1q_0) ..controls (113.72bp,231.0bp) and (113.36bp,169.11bp)  .. (p_2q_1);
-  \draw (122.5bp,192.0bp) node {$b|c$};
-  \draw [->] (p_1q_2) ..controls (237.58bp,75.19bp) and (221.53bp,57.007bp)  .. (p_2q_2);
-  \draw (234.0bp,61.5bp) node {$b$};
-  \draw [->] (p_1q_1) ..controls (162.58bp,162.19bp) and (146.53bp,144.01bp)  .. (p_2q_1);
-  \draw (159.0bp,148.5bp) node {$b$};
-  \draw [->] (p_0q_0) ..controls (188.72bp,318.0bp) and (188.36bp,256.11bp)  .. (p_1q_1);
-  \draw (197.0bp,279.0bp) node {$a|c$};
-  \draw [->] (p_0q_2) ..controls (311.25bp,162.19bp) and (295.64bp,144.01bp)  .. (p_1q_2);
-  \draw (307.5bp,148.5bp) node {$a$};
-  \draw [->] (p_1q_1) ..controls (213.42bp,162.19bp) and (229.46bp,144.01bp)  .. (p_1q_2);
-  \draw (234.0bp,148.5bp) node {$d$};
-  \draw [->] (p_1q_1) ..controls (188.0bp,144.0bp) and (188.0bp,82.113bp)  .. (p_2q_2);
-  \draw (197.0bp,105.0bp) node {$b|d$};
-  \draw [->] (p_2q_0) ..controls (64.078bp,162.19bp) and (79.908bp,144.01bp)  .. (p_2q_1);
-  \draw (84.497bp,148.5bp) node {$c$};
-  \draw [->] (p_0q_0) ..controls (163.58bp,336.19bp) and (147.53bp,318.01bp)  .. (p_1q_0);
-  \draw (159.5bp,322.5bp) node {$a$};
-  \draw [->] (p_0q_0) ..controls (214.08bp,336.19bp) and (229.91bp,318.01bp)  .. (p_0q_1);
-  \draw (234.5bp,322.5bp) node {$c$};
-  \draw [->] (p_0q_1) ..controls (263.0bp,231.0bp) and (263.0bp,169.11bp)  .. (p_1q_2);
-  \draw (271.0bp,192.0bp) node {$a|d$};
-  \draw [->] (p_0q_1) ..controls (287.74bp,249.19bp) and (303.36bp,231.01bp)  .. (p_0q_2);
-  \draw (308.0bp,235.5bp) node {$d$};
-  \draw [->] (p_0q_1) ..controls (237.58bp,249.19bp) and (221.53bp,231.01bp)  .. (p_1q_1);
-  \draw (233.5bp,235.5bp) node {$a$};
-  \draw [->] (p_1q_0) ..controls (88.576bp,249.19bp) and (72.532bp,231.01bp)  .. (p_2q_0);
-  \draw (84.997bp,235.5bp) node {$b$};
+  \draw (113.5bp,46.0bp) node {$d$};
+  \draw (75.042bp,68.67bp) node {$$};
+  \draw (120.07bp,23.676bp) node {$$};
+  \draw [->] (p_1q_0) ..controls (86.56bp,217.21bp) and (95.89bp,201.22bp)  .. (106.0bp,189.0bp) .. controls (109.97bp,184.2bp) and (114.74bp,179.41bp)  .. (p_1q_1);
+  \draw (114.0bp,198.0bp) node {$c$};
+  \draw (87.34bp,220.76bp) node {$$};
+  \draw (121.02bp,174.3bp) node {$$};
+  \draw [->] (p_1q_0) ..controls (77.0bp,202.14bp) and (77.0bp,136.25bp)  .. (p_2q_1);
+  \draw (88.5bp,160.0bp) node {$b|c$};
+  \draw (74.0bp,220.07bp) node {$$};
+  \draw (71.0bp,99.699bp) node {$$};
+  \draw [->] (p_1q_2) ..controls (181.11bp,63.253bp) and (162.3bp,41.26bp)  .. (p_2q_2);
+  \draw (180.0bp,46.0bp) node {$b$};
+  \draw (185.13bp,68.964bp) node {$$};
+  \draw (148.71bp,24.351bp) node {$$};
+  \draw [->] (p_1q_1) ..controls (120.73bp,146.34bp) and (112.36bp,138.69bp)  .. (106.0bp,131.0bp) .. controls (98.575bp,122.03bp) and (91.572bp,111.02bp)  .. (p_2q_1);
+  \draw (114.0bp,122.0bp) node {$b$};
+  \draw (121.02bp,145.7bp) node {$$};
+  \draw (87.34bp,99.238bp) node {$$};
+  \draw [->] (p_0q_0) ..controls (136.0bp,275.62bp) and (136.0bp,212.22bp)  .. (p_1q_1);
+  \draw (148.0bp,236.0bp) node {$a|c$};
+  \draw (142.0bp,292.77bp) node {$$};
+  \draw (130.0bp,175.87bp) node {$$};
+  \draw [->] (p_0q_2) ..controls (244.81bp,139.13bp) and (225.01bp,116.23bp)  .. (p_1q_2);
+  \draw (245.5bp,122.0bp) node {$a$};
+  \draw (249.15bp,145.08bp) node {$$};
+  \draw (198.99bp,99.087bp) node {$$};
+  \draw [->] (p_1q_1) ..controls (147.87bp,141.5bp) and (159.11bp,125.64bp)  .. (170.0bp,113.0bp) .. controls (173.83bp,108.56bp) and (178.21bp,103.96bp)  .. (p_1q_2);
+  \draw (178.5bp,122.0bp) node {$d$};
+  \draw (147.43bp,144.91bp) node {$$};
+  \draw (183.83bp,98.545bp) node {$$};
+  \draw [->] (p_1q_1) ..controls (136.0bp,126.58bp) and (136.0bp,61.809bp)  .. (p_2q_2);
+  \draw (148.0bp,84.0bp) node {$b|d$};
+  \draw (133.0bp,144.16bp) node {$$};
+  \draw (130.0bp,25.112bp) node {$$};
+  \draw [->] (p_2q_0) ..controls (25.054bp,140.84bp) and (32.385bp,124.69bp)  .. (42.0bp,113.0bp) .. controls (46.542bp,107.48bp) and (52.332bp,102.31bp)  .. (p_2q_1);
+  \draw (50.0bp,122.0bp) node {$c$};
+  \draw (15.15bp,144.57bp) node {$$};
+  \draw (60.217bp,97.855bp) node {$$};
+  \draw [->] (p_0q_0) ..controls (119.67bp,295.29bp) and (111.31bp,288.27bp)  .. (105.0bp,281.0bp) .. controls (97.916bp,272.84bp) and (91.354bp,262.73bp)  .. (p_1q_0);
+  \draw (113.5bp,273.0bp) node {$a$};
+  \draw (120.11bp,294.28bp) node {$$};
+  \draw (75.294bp,251.28bp) node {$$};
+  \draw [->] (p_0q_0) ..controls (152.78bp,288.42bp) and (171.3bp,267.36bp)  .. (p_0q_1);
+  \draw (180.0bp,273.0bp) node {$c$};
+  \draw (136.87bp,293.69bp) node {$$};
+  \draw (184.91bp,251.07bp) node {$$};
+  \draw [->] (p_0q_1) ..controls (198.0bp,202.14bp) and (198.0bp,136.25bp)  .. (p_1q_2);
+  \draw (210.5bp,160.0bp) node {$a|d$};
+  \draw (204.0bp,220.07bp) node {$$};
+  \draw (204.0bp,99.699bp) node {$$};
+  \draw [->] (p_0q_1) ..controls (215.19bp,215.13bp) and (234.99bp,192.23bp)  .. (p_0q_2);
+  \draw (245.5bp,198.0bp) node {$d$};
+  \draw (198.85bp,221.08bp) node {$$};
+  \draw (249.01bp,175.09bp) node {$$};
+  \draw [->] (p_0q_1) ..controls (184.07bp,221.98bp) and (176.28bp,214.29bp)  .. (170.0bp,207.0bp) .. controls (161.92bp,197.62bp) and (153.64bp,186.46bp)  .. (p_1q_1);
+  \draw (178.5bp,198.0bp) node {$a$};
+  \draw (183.83bp,221.46bp) node {$$};
+  \draw (147.43bp,175.09bp) node {$$};
+  \draw [->] (p_1q_0) ..controls (58.74bp,223.0bp) and (48.922bp,215.41bp)  .. (42.0bp,207.0bp) .. controls (35.014bp,198.51bp) and (29.234bp,187.66bp)  .. (p_2q_0);
+  \draw (50.0bp,198.0bp) node {$b$};
+  \draw (60.217bp,222.14bp) node {$$};
+  \draw (15.15bp,175.43bp) node {$$};
 %
 \end{tikzpicture}

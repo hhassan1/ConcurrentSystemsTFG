@@ -1,0 +1,226 @@
+% \bib, bibdiv, biblist are defined by the amsrefs package.
+\begin{bibdiv}
+\begin{biblist}
+
+\bib{andrews2000foundations}{book}{
+      author={Andrews, G.R.},
+       title={Foundations of multithreaded, parallel, and distributed
+  programming},
+   publisher={Addison-Wesley},
+        date={2000},
+        ISBN={9780201357523},
+         url={https://books.google.es/books?id=npRQAAAAMAAJ},
+}
+
+\bib{Baeten1991}{article}{
+      author={Baeten, J. C.~M.},
+      author={Bergstra, J.~A.},
+       title={Real time process algebra},
+        date={1991},
+        ISSN={1433-299X},
+     journal={Formal Aspects of Computing},
+      volume={3},
+      number={2},
+       pages={142\ndash 188},
+         url={http://dx.doi.org/10.1007/BF01898401},
+}
+
+\bib{Baeten:1993:DBE:174130.174141}{article}{
+      author={Baeten, J. C.~M.},
+      author={Bergstra, J.~A.},
+      author={Klop, J.~W.},
+       title={Decidability of bisimulation equivalence for process generating
+  context-free languages},
+        date={1993-07},
+        ISSN={0004-5411},
+     journal={J. ACM},
+      volume={40},
+      number={3},
+       pages={653\ndash 682},
+         url={http://doi.acm.org/10.1145/174130.174141},
+}
+
+\bib{BAETEN1987129}{article}{
+      author={Baeten, J.C.M.},
+      author={Bergstra, J.A.},
+      author={Klop, J.W.},
+       title={On the consistency of koomen's fair abstraction rule},
+        date={1987},
+        ISSN={0304-3975},
+     journal={Theoretical Computer Science},
+      volume={51},
+      number={1},
+       pages={129 \ndash  176},
+  url={http://www.sciencedirect.com/science/article/pii/0304397587900521},
+}
+
+\bib{baeten1996discrete}{article}{
+      author={Baeten, Jos~CM},
+      author={Bergstra, Jan~A},
+       title={Discrete time process algebra},
+        date={1996},
+     journal={Formal Aspects of Computing},
+      volume={8},
+      number={2},
+       pages={188\ndash 208},
+}
+
+\bib{DBLP:journals/corr/abs-1304-6574}{article}{
+      author={de~Frutos{-}Escrig, David},
+      author={Gregorio{-}Rodr{\'{\i}}guez, Carlos},
+      author={Palomino, Miguel},
+      author={Romero{-}Hern{\'{a}}ndez, David},
+       title={Unifying the linear time-branching time spectrum of process
+  semantics},
+        date={2013},
+     journal={Logical Methods in Computer Science},
+      volume={9},
+      number={2},
+         url={https://doi.org/10.2168/LMCS-9(2:11)2013},
+}
+
+\bib{Denning:1981:TKD:358722.358740}{article}{
+      author={Denning, Dorothy~E.},
+      author={Sacco, Giovanni~Maria},
+       title={Timestamps in key distribution protocols},
+        date={1981-08},
+        ISSN={0001-0782},
+     journal={Commun. ACM},
+      volume={24},
+      number={8},
+       pages={533\ndash 536},
+         url={http://doi.acm.org/10.1145/358722.358740},
+}
+
+\bib{Groote:2014:MAC:2628007}{book}{
+      author={Groote, Jan~Friso},
+      author={Mousavi, Mohammad~Reza},
+       title={Modeling and analysis of communicating systems},
+   publisher={The MIT Press},
+        date={2014},
+        ISBN={0262027712, 9780262027717},
+}
+
+\bib{hennessy1995process}{article}{
+      author={Hennessy, Matthew},
+      author={Regan, Tim},
+       title={A process algebra for timed systems},
+        date={1995},
+     journal={Information and computation},
+      volume={117},
+      number={2},
+       pages={221\ndash 239},
+}
+
+\bib{HIRSHFELD1996143}{article}{
+      author={Hirshfeld, Yoram},
+      author={Jerrum, Mark},
+      author={Moller, Faron},
+       title={A polynomial algorithm for deciding bisimilarity of normed
+  context-free processes},
+        date={1996},
+        ISSN={0304-3975},
+     journal={Theoretical Computer Science},
+      volume={158},
+      number={1},
+       pages={143 \ndash  159},
+  url={http://www.sciencedirect.com/science/article/pii/030439759500064X},
+}
+
+\bib{KANELLAKIS199043}{article}{
+      author={Kanellakis, Paris~C.},
+      author={Smolka, Scott~A.},
+       title={Ccs expressions, finite state processes, and three problems of
+  equivalence},
+        date={1990},
+        ISSN={0890-5401},
+     journal={Information and Computation},
+      volume={86},
+      number={1},
+       pages={43 \ndash  68},
+  url={http://www.sciencedirect.com/science/article/pii/089054019090025D},
+}
+
+\bib{keiren2013modal}{article}{
+      author={Keiren, Jeroen~JA},
+       title={Modal $\mu$-calculus (version 1.1)},
+        date={2013},
+}
+
+\bib{KOOMEN19851}{article}{
+      author={Koomen, C.J.},
+       title={Algebraic specification and verification of communication
+  protocols},
+        date={1985},
+        ISSN={0167-6423},
+     journal={Science of Computer Programming},
+      volume={5},
+       pages={1 \ndash  36},
+  url={http://www.sciencedirect.com/science/article/pii/0167642385900024},
+}
+
+\bib{Lowe:1995:ANP:219887.219895}{article}{
+      author={Lowe, Gavin},
+       title={An attack on the needham-schroeder public-key authentication
+  protocol},
+        date={1995-11},
+        ISSN={0020-0190},
+     journal={Inf. Process. Lett.},
+      volume={56},
+      number={3},
+       pages={131\ndash 133},
+         url={http://dx.doi.org/10.1016/0020-0190(95)00144-2},
+}
+
+\bib{Needham:1978:UEA:359657.359659}{article}{
+      author={Needham, Roger~M.},
+      author={Schroeder, Michael~D.},
+       title={Using encryption for authentication in large networks of
+  computers},
+        date={1978-12},
+        ISSN={0001-0782},
+     journal={Commun. ACM},
+      volume={21},
+      number={12},
+       pages={993\ndash 999},
+         url={http://doi.acm.org/10.1145/359657.359659},
+}
+
+\bib{Peterson1981115}{article}{
+      author={Peterson, G.L.},
+       title={Myths about the mutual exclusion problem},
+        date={1981},
+        ISSN={0020-0190},
+     journal={Information Processing Letters},
+      volume={12},
+      number={3},
+       pages={115 \ndash  116},
+  url={http://www.sciencedirect.com/science/article/pii/002001908190106X},
+}
+
+\bib{valmari1995failure}{article}{
+      author={Valmari, Antti},
+       title={Failure-based equivalences are faster than many believe},
+        date={1995},
+}
+
+\bib{van1990linear}{article}{
+      author={van Glabbeek, Rob},
+       title={The linear time-branching time spectrum},
+        date={1990},
+     journal={CONCUR'90 Theories of Concurrency: Unification and Extension},
+       pages={278\ndash 297},
+}
+
+\bib{Vaughan1942-VAURWW}{article}{
+      author={Vaughan, H.~E.},
+       title={Review: William wernick, complete sets of logical functions},
+        date={1942},
+     journal={Journal of Symbolic Logic},
+      volume={7},
+      number={2},
+       pages={99\ndash 99},
+}
+
+\end{biblist}
+\end{bibdiv}
